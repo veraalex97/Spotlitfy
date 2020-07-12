@@ -15,7 +15,7 @@
 
 <html>
 <head>
-	<title>Welcome to Slotify!</title>
+	<title>Spotlitfygit</title>
 </head>
 <body>
 
