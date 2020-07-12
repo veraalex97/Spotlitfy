@@ -32,18 +32,23 @@
     <form action="register.php" id="registerForm" method="POST">
       <h2>Create Account</h2>
       <p>
+        <?php echo $account->getError("Your username must be between 5 and 25 characters."); ?>
         <label for="username">Username</label>
         <input type="text" id="username" name="username" placeholder="e.g. AtariX" required>
       </p>
       <p>
+        <?php echo $account->getError("Your first name must be between 2 and 25 characters."); ?>
         <label for="firstName">First Name</label>
         <input type="text" id="firstName" name="firstName" required>
       </p>
       <p>
+        <?php echo $account->getError("Your last name must be between 5 and 25 characters."); ?>
         <label for="lastName">Last Name</label>
         <input type="text" id="lastName" name="lastName" required>
       </p>
       <p>
+        <?php echo $account->getError("Your emails do not match."); ?>
+        <?php echo $account->getError("Email invalid format."); ?>
         <label for="email">Email Address</label>
         <input type="email" id="email" name="email" required>
       </p>
@@ -52,6 +57,9 @@
         <input type="email" id="email2" name="email2" required>
       </p>
       <p>
+        <?php echo $account->getError("Your passwords do not match."); ?>
+        <?php echo $account->getError("Your password can only contain numbers and letters."); ?>
+        <?php echo $account->getError("Your password must be between 5 and 30 characters"); ?>
         <label for="password">Password</label>
         <input type="password" id="password" name="password" required>
       </p>
