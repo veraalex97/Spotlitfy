@@ -17,8 +17,31 @@
 <head>
 	<title>Spotlitfy</title>
 	<link rel="stylesheet" href="assets/css/register.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="assets/js/register.js"></script>
 </head>
 <body>
+<?php 
+	if(isset($_POST['registerButton'])) {
+		echo '
+		<script>
+			$(document).ready(function() {
+					$("#loginForm").hide();
+					$("#registerForm").show();
+			});
+		</script>
+		';
+	} else {
+		echo '
+		<script>
+			$(document).ready(function() {
+				$("#loginForm").show();
+				$("#registerForm").hide();
+			});
+		</script>
+		';
+	}
+?>
 	<div id="background">
 		<div id="loginContainer">
 			<div id="inputContainer">
@@ -27,7 +50,7 @@
 					<p>
 						<?php echo $account->getError(Constants::$loginFailed); ?>
 						<label for="loginUsername">Username</label>
-						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" required>
+						<input id="loginUsername" name="loginUsername" type="text" placeholder="e.g. bartSimpson" value="<?php getInputValue('username') ?>" required>
 					</p>
 					<p>
 						<label for="loginPassword">Password</label>
@@ -35,6 +58,10 @@
 					</p>
 
 					<button type="submit" name="loginButton">LOG IN</button>
+
+					<div class="hasAccountText">
+						<span id="hideLogin">Don't have an account yet? Sign Up Here</span>
+					</div>
 					
 				</form>
 
@@ -89,10 +116,24 @@
 
 					<button type="submit" name="registerButton">SIGN UP</button>
 					
+					<div class="hasAccountText">
+						<span id="hideRegister">Already have an account? Log in Here</span>
+					</div>
 				</form>
 
 
 			</div>
+
+			<div id="loginText">
+				<h1>Get great music, right now </h1>
+				<h2>Listen to music, free</h2>
+				<ul>
+					<li>Discover music you'll fall in love with</li>
+					<li>Create your own playlist</li>
+					<li>Follow artist and keep up to date</li>
+				</ul>
+			</div>
+
 		</div>
 	</div>
 

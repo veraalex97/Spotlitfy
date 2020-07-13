@@ -10,13 +10,14 @@ body {
   background-image: url(../images/bg.jpg);
   background-position: center;
   background-size: cover;
+  opacity: 0.9;
   display: table;
   height: 100%;
   width:  100%;
 }
 
 #loginContainer * {
-  color: #fff;
+  color: #000;
   font-family: "Helvetica Neue", "Helvetica", "Arial", sans-serif;
   font-weight: normal;
   line-height: 1em;
@@ -30,6 +31,24 @@ body {
   max-width: 1024px;
 }
 
+::-webkit-input-placeholder {
+  color: #000;
+}
+:-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+::-moz-placeholder {
+  color: #000;
+  opacity: 1;
+}
+:-ms-input-placeholder {
+  color: #000;
+}
+::-ms-input-placeholder {
+  color: #000;
+}
+
 #inputContainer {
   width: 400px;
   padding: 45px;
@@ -39,4 +58,87 @@ body {
 
 #inputContainer h2 {
   text-align: center;
+}
+
+#inputContainer input[type="text"],
+#inputContainer input[type="email"],
+#inputContainer input[type="password"] {
+  display: block;
+  background-color: transparent;
+  border: 0;
+  border-bottom: 3px solid black;
+  height: 27px;
+  line-height: 27px;
+  width: 100%;
+  font-size: 15px;
+}
+
+#inputContainer label {
+  color: #000;
+  font-size: 15px;
+  margin-top: 15px;
+  display: block;
+}
+
+#inputContainer button {
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 250px;
+  color: black;
+  display: block;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin: 20px auto;
+  height: 41px;
+  width: 100%;
+}
+
+#inputContainer button:hover {
+  cursor: pointer;
+}
+
+.hasAccountText span {
+  font-size: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.hasAccountText {
+  text-align: center;
+}
+
+#registerForm,
+#loginForm {
+  display: none;
+}
+
+#loginText {
+  padding: 45px;
+  display: table-cell;
+}
+
+#loginText h1 {
+  color: #07d159;
+  font-size: 60px;
+  font-weight: bold;
+}
+
+#loginText h2 {
+  margin: 35px 0;
+}
+
+#loginText ul {
+  padding: 0;
+}
+
+#loginText li {
+  font-size: 19px;
+  list-style-type: none;
+  padding: 10px;
+}
+
+#inputContainer .errorMessage {
+  color: #07d159;
+  font-size: 15px;
+  display: block;
 }
