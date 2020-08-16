@@ -31,7 +31,7 @@ $artist = $album->getArtist();
         $albumSong = new Song($con, $songId);
         $albumArtist = $albumSong->getArtist();
         echo "<li class='trackListRow'>
-                <div class='classCount'>
+                <div class='trackCount'>
                   <img class='play' src='assets/images/icons/play-white.png'>
                   <span class='trackNumber'>$i</span>
                 </div>
